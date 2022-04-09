@@ -1,7 +1,7 @@
 
-import makeStyles from '@mui/styles/makeStyles';
+// import makeStyles from '@mui/styles/makeStyles';
 
-export default makeStyles((theme) => ({
+const useStyles = theme => ({
   toolbar: theme.mixins.toolbar,
   content: {
     flexGrow: 1,
@@ -11,4 +11,6 @@ export default makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-}));
+});
+
+export default useStyles;

@@ -4,7 +4,7 @@ import { ShoppingCart } from '@mui/icons-material';
 
 import logo from '../../assets/commerce.png';
 import styles from './styles';
-import useClasses from './hook';
+import useClasses from '../../hook';
 
 const Navbar = () => {
     const classes = useClasses(styles);
@@ -24,8 +24,7 @@ const Navbar = () => {
                             </Badge>
                         </IconButton>
                     </div>
-                </Toolbar>
-                
+                </Toolbar>               
             </AppBar>        
         </div>
     )

@@ -1,6 +1,6 @@
-import makeStyles from '@mui/styles/makeStyles';
+// import makeStyles from '@mui/styles/makeStyles';
 
-export default makeStyles(() => ({
+const useStyles = theme => ({
     root: {
       maxWidth: '100%',
     },
@@ -16,4 +16,6 @@ export default makeStyles(() => ({
       display: 'flex',
       justifyContent: 'space-between',
     },
-  }));
+  });
+
+  export default useStyles;
