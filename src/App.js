@@ -1,8 +1,8 @@
 import React from 'react'
 
 import { Products, Navbar } from './components';
-import { ThemeProvider as MuiThemeProvider, StylesProvider } from '@mui/styles';
-import { ThemeProvider } from '@emotion/react';
+// import { ThemeProvider as MuiThemeProvider, StylesProvider } from '@mui/styles';
+// import { ThemeProvider } from '@emotion/react';
 
 
 const App = () => {

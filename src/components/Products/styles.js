@@ -1,16 +1,19 @@
 
-// import makeStyles from '@mui/styles/makeStyles';
+import { createTheme } from '@mui/material/styles';
 
-const useStyles = theme => ({
-  // toolbar: theme.mixins.toolbar,
+
+const theme = createTheme();
+
+const useStyles = {
+  toolbar: theme.mixins.toolbar,
   content: {
     flexGrow: 1,
-    // backgroundColor: theme.palette.background.default,
-    // padding: theme.spacing(3),
+    backgroundColor: theme.palette.background.default,
+    padding: theme.spacing(3),
   },
   root: {
     flexGrow: 1,
   },
-});
+};
 
 export default useStyles;

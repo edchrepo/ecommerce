@@ -1,6 +1,8 @@
-// import makeStyles from '@mui/styles/makeStyles';
+import { createTheme } from '@mui/material/styles';
 
-const useStyles = theme => ({
+const theme = createTheme();
+
+const useStyles = {
     root: {
       maxWidth: '100%',
     },
@@ -16,6 +18,6 @@ const useStyles = theme => ({
       display: 'flex',
       justifyContent: 'space-between',
     },
-  });
+  };
 
   export default useStyles;
