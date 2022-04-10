@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { commerce } from './lib/commerce';
 
-import { Products, Navbar } from './components';
+import { Products, Navbar, Cart } from './components';
 // import { ThemeProvider as MuiThemeProvider, StylesProvider } from '@mui/styles';
 // import { ThemeProvider } from '@emotion/react';
 
@@ -35,7 +35,8 @@ const App = () => {
             <MuiThemeProvider theme={theme}>
                <ThemeProvider theme={theme}> */}
                  <Navbar totalItems={cart.total_items} />
-                 <Products products={products} onAddToCart = {handleAddToCart} />
+                 {/* <Products products={products} onAddToCart = {handleAddToCart} /> */}
+                 <Cart cart={cart} />
                {/* </ThemeProvider>
             </MuiThemeProvider>
         </StylesProvider> */}
