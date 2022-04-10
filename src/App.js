@@ -12,7 +12,6 @@ const App = () => {
 
   const fetchProducts = async () => {
       const { data } = await commerce.products.list();
-
       setProducts(data);
   }
 
@@ -30,7 +29,6 @@ const App = () => {
       fetchCart();  
   }, []);
 
-  console.log(cart);
   return (
     <div>
         {/* <StylesProvider injectFirst>
