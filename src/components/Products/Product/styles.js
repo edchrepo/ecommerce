@@ -5,6 +5,7 @@
 const useStyles = {
     root: {
       maxWidth: '100%',
+      //maxHeight: '100%',
     },
     media: {
       height: 0,

@@ -3,7 +3,10 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme();
 
 const useStyles = {
-  toolbar: theme.mixins.toolbar,
+  toolbar: {
+    marginTop: '10%',  
+  }, 
+  //theme.mixins.toolbar,
   title: {
     marginTop: '5%',
   },
