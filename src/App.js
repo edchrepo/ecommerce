@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { commerce } from './lib/commerce';
 
-import { Products, Navbar, Cart } from './components';
+import { Products, Navbar, Cart, Checkout } from './components';
 import { BrowserRouter as Router, Routes , Route } from 'react-router-dom';
 // import { ThemeProvider as MuiThemeProvider, StylesProvider } from '@mui/styles';
 // import { ThemeProvider } from '@emotion/react';
@@ -63,6 +63,7 @@ const App = () => {
                           />
                         } 
                       />
+                      <Route path='/checkout' element={<Checkout />}/>
                   </Routes>
                 {/* </ThemeProvider>
               </MuiThemeProvider>
