@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Typography, Button, Grid } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 import styles from './styles';
 import useClasses from '../../hook';
@@ -9,8 +10,8 @@ const Cart = ({ cart }) => {
   const classes = useClasses(styles);
   
   const EmptyCart = () => (
-    <Typography variant = "subtitle1">
-        You have no items in your shopping cart, start adding some!
+    <Typography variant = "subtitle1"> You have no items in your shopping cart
+        <Link to ="/" className={classes.link}>start adding some!</Link>
     </Typography>
   )
 
@@ -35,7 +36,6 @@ const Cart = ({ cart }) => {
                     Checkout
                 </Button>
             </div>
-
         </div>
     </>
   );
