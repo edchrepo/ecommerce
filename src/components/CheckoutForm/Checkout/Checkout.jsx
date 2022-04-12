@@ -16,6 +16,7 @@ const Checkout = ({ cart }) => {
   const [checkoutToken, setCheckoutToken] = useState(null);
 
   useEffect(() => {
+        //create async funct (useeffect cannot be async)
         const generateToken = async () => {
             try {
                 const token = await commerce.checkout.generateToken(cart.id, { type: 'cart' })
