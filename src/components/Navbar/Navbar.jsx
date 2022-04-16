@@ -1,13 +1,13 @@
 import React from 'react'
-import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography } from '@mui/material';
-import { ShoppingCart } from '@mui/icons-material';
+import { AppBar, Toolbar, Typography } from '@mui/material';
 import { Link, useLocation } from 'react-router-dom';
+import CartHover from './CartHover';
 
 import logo from '../../assets/commerce.png';
 import styles from './styles';
 import useClasses from '../../hook';
 
-const Navbar = ({ totalItems }) => {
+const Navbar = ({ totalItems, cart, show, handleMouseEnter, handleMouseLeave }) => {
     const classes = useClasses(styles);
     const location = useLocation();
 
@@ -22,12 +22,12 @@ const Navbar = ({ totalItems }) => {
                     <div className={classes.grow} />
                     {location.pathname === '/' && (
                     <div className={classes.button}>
-    
-                        <IconButton component={Link} to="/cart" aria-label="Show cart items" color="inherit">
-                            <Badge badgeContent={totalItems} color="secondary">
-                                <ShoppingCart />
-                            </Badge>
-                        </IconButton>
+                        <CartHover totalItems={totalItems} 
+                                   cart={cart} 
+                                   show={show} 
+                                   handleMouseEnter={handleMouseEnter} 
+                                   handleMouseLeave={handleMouseLeave} 
+                        />
                     </div>)}
                 </Toolbar>               
             </AppBar>        

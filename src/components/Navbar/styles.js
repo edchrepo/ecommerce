@@ -1,7 +1,5 @@
-import makeStyles from '@mui/styles/makeStyles';
 import { alpha } from '@mui/material/styles';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useTheme } from '@emotion/react';
+import { createTheme } from '@mui/material/styles';
 
 
 const drawerWidth = 0;
@@ -71,6 +69,14 @@ const useStyles =  {
       width: '20ch',
     },
   },
+  cart: {
+    position: 'fixed',
+    top: '57px',
+    right: '0',
+    padding: '10px',
+    width: '25%',
+    backgroundColor: theme.palette.grey.A100,
+  },  
 };
 
 export default useStyles;

@@ -3,8 +3,6 @@ import { commerce } from './lib/commerce';
 
 import { Products, Navbar, Cart, Checkout } from './components';
 import { BrowserRouter as Router, Routes , Route } from 'react-router-dom';
-// import { ThemeProvider as MuiThemeProvider, StylesProvider } from '@mui/styles';
-// import { ThemeProvider } from '@emotion/react';
 
 
 const App = () => {
@@ -12,6 +10,7 @@ const App = () => {
   const [cart, setCart] = useState({});
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
+  const [show, setShow] = useState(false);
 
   const fetchProducts = async () => {
       const { data } = await commerce.products.list();
@@ -57,6 +56,14 @@ const App = () => {
       }
   }
   
+  const handleShowCart = (e) => {
+        setShow(!show);
+  }
+
+  const handleHideCart = (e) => {
+        setShow(false);
+  }
+
   useEffect(() => {
       fetchProducts();
       fetchCart();  
@@ -64,40 +71,39 @@ const App = () => {
 
   return (
     <Router>
-      <div>
-          {/* <StylesProvider injectFirst>
-              <MuiThemeProvider theme={theme}>
-                <ThemeProvider theme={theme}> */}
-                  <Navbar totalItems={cart.total_items} />
-                  <Routes>
-                      <Route path='/' element={
-                          <Products 
-                              products = {products} 
-                              onAddToCart = {handleAddToCart}
-                          />} 
-                      />
-                      <Route path='/cart' element={
-                          <Cart 
-                              cart={cart} 
-                              handleUpdateCartQty={handleUpdateCartQty}
-                              handleRemoveFromCart={handleRemoveFromCart}
-                              handleEmptyCart={handleEmptyCart}                          
-                          />
-                        } 
-                      />
-                      <Route path='/checkout' element={
-                          <Checkout 
-                              cart={cart} 
-                              order={order} 
-                              onCaptureCheckout={handleCaptureCheckout} 
-                              error={errorMessage}
-                          />}
-                      />
-                  </Routes>
-                {/* </ThemeProvider>
-              </MuiThemeProvider>
-          </StylesProvider> */}
-      </div>
+        <div>
+            <Navbar 
+                totalItems={cart.total_items}
+                cart={cart}
+                show={show}
+                handleMouseEnter={handleShowCart}
+                handleMouseLeave={handleHideCart} 
+            />
+                <Routes>
+                    <Route path='/' element={
+                        <Products 
+                            products = {products} 
+                            onAddToCart = {handleAddToCart}
+                        />} 
+                    />
+                    <Route path='/cart' element={
+                        <Cart 
+                            cart={cart} 
+                            handleUpdateCartQty={handleUpdateCartQty}
+                            handleRemoveFromCart={handleRemoveFromCart}
+                            handleEmptyCart={handleEmptyCart}                          
+                        />} 
+                    />
+                    <Route path='/checkout' element={
+                        <Checkout 
+                            cart={cart} 
+                            order={order} 
+                            onCaptureCheckout={handleCaptureCheckout} 
+                            error={errorMessage}
+                        />}
+                    />
+                </Routes>  
+        </div>
     </Router>
   )
 }
