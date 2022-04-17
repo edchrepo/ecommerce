@@ -21,6 +21,7 @@ const Navbar = ({ totalItems, cart, show, handleMouseEnter, handleMouseLeave }) 
                     <div className={classes.grow} />
                     {location.pathname === '/' && (
                     <div className={classes.button}>
+                        Go to Cart
                         <CartHover totalItems={totalItems} 
                                    cart={cart} 
                                    show={show} 
