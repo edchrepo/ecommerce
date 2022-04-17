@@ -77,6 +77,9 @@ const useStyles =  {
     width: '25%',
     backgroundColor: theme.palette.grey.A100,
   },  
+  cartImg: {
+    width: "50px"
+  },
 };
 
 export default useStyles;

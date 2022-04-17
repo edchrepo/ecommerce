@@ -17,7 +17,7 @@ const CartHover = ({ totalItems, cart, show, handleMouseEnter, handleMouseLeave 
                 <List disablePadding>
                     {cart.line_items.map((product) => (
                     <ListItem style={{padding: '5px 0'}} key={product.name}>
-                        <img src = {product.image.url} width="50px" alt = {product.id}/>
+                        <img src = {product.image.url} alt = {product.id} className={classes.cartImg}/>
                         <ListItemText style={{marginLeft: '10px'}} primary={product.name} secondary={`Quantity: ${product.quantity}`}/>
                         <Typography variant="body2">{product.line_total.formatted_with_symbol}</Typography>
                     </ListItem>

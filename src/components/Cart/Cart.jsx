@@ -44,8 +44,9 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
     return 'Loading ...';
 
   return (
-        <Container>
+        <Container className={classes.container}>
             <div className={classes.toolbar}/>
+            <br />
             <Typography className={classes.title} variant="h3" gutterBottom>
                 Your Shopping Cart
             </Typography>

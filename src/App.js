@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { commerce } from './lib/commerce';
-
+// import background from './assets/background.png';
 import { Products, Navbar, Cart, Checkout } from './components';
 import { BrowserRouter as Router, Routes , Route } from 'react-router-dom';
 
@@ -57,7 +57,7 @@ const App = () => {
   }
   
   const handleShowCart = (e) => {
-        setShow(!show);
+        setShow(true);
   }
 
   const handleHideCart = (e) => {
@@ -70,6 +70,9 @@ const App = () => {
   }, []);
 
   return (
+    // <div style={{ 
+    //     backgroundImage: `url(${background})`
+    // }}>
     <Router>
         <div>
             <Navbar 
@@ -105,6 +108,7 @@ const App = () => {
                 </Routes>  
         </div>
     </Router>
+    //</div>
   )
 }
 
