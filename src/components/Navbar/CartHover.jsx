@@ -13,6 +13,7 @@ const CartHover = ({ totalItems, cart, show, handleMouseEnter, handleMouseLeave 
             <ShoppingCart onClick={handleMouseLeave} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />
         </Badge>
         {show ? 
+            totalItems ? 
             <div className={classes.cart}>
                 <List disablePadding>
                     {cart.line_items.map((product) => (
@@ -31,6 +32,10 @@ const CartHover = ({ totalItems, cart, show, handleMouseEnter, handleMouseLeave 
                 </List>
             </div>
             :
+            <div className={classes.cart}>
+                You have no items in cart
+            </div>
+            : 
         <></>}
     </IconButton>
   )
