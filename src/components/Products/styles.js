@@ -5,11 +5,13 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme();
 
 const useStyles = {
+  image: {
+    width: '100%',
+    flexGrow: 1,
+  },
   toolbar: theme.mixins.toolbar,
   content: {
     flexGrow: 1,
-    // backgroundImage: `url(${background})`,
-    // backgroundColor: theme.palette.grey.A100,
     padding: theme.spacing(3),
   },
   root: {

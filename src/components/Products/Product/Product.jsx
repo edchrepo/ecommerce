@@ -9,7 +9,7 @@ const Product = ({ product, onAddToCart }) => {
     const classes = useClasses(styles);
     
     return (
-        <Card className = {classes.root}>
+        <Card className = {classes.root} style={{backgroundColor: 'transparent', boxShadow: 'none'}}>
                 <CardMedia className = {classes.media} image={product.image.url} title = {product.name} />
                 <CardContent>
                     <div className = {classes.cardContent}>

@@ -1,11 +1,6 @@
-// import { createTheme } from '@mui/material/styles';
-
-// const theme = createTheme();
-
 const useStyles = {
     root: {
       maxWidth: '100%',
-      //maxHeight: '100%',
     },
     media: {
       height: 0,

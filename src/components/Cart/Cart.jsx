@@ -44,6 +44,7 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
     return 'Loading ...';
 
   return (
+    <main className={classes.content}>
         <Container className={classes.container}>
             <div className={classes.toolbar}/>
             <br />
@@ -52,6 +53,7 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
             </Typography>
             { !cart.line_items.length ? <EmptyCart /> : <FilledCart />}
         </Container>
+    </main>
   )
 }
 

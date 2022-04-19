@@ -3,6 +3,9 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme();
 
 const useStyles = {
+  content: {
+    padding: '0',
+  },
   toolbar: theme.mixins.toolbar,
   // toolbar: {
   //   marginTop: '20%',  

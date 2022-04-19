@@ -13,7 +13,7 @@ const Navbar = ({ totalItems, cart, show, handleMouseEnter, handleMouseLeave }) 
 
     return (
         <div>
-            <AppBar position="fixed" className={classes.appBar} color="inherit" sx={{ bgcolor: "#e2e2e2" }}>
+            <AppBar position="fixed" className={classes.appBar} color="inherit">
                 <Toolbar>
                     <Typography component={Link} to="/" variant="h6" className={classes.title} color="inherit">
                         <img src={logo} alt="Commerce.js" height="75px" className={classes.image} />
