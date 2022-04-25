@@ -39,6 +39,7 @@ const PaymentForm = ({ checkoutToken, shippingData, nextStep, backStep, onCaptur
               }
           }        
           onCaptureCheckout(checkoutToken.id, orderData); 
+          //Use timeout feature for no credit card fix
           //timeout();
           nextStep();
       }
