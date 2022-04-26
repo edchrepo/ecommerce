@@ -13,8 +13,11 @@ const Products = ({ products, onAddToCart }) => {
         palette: {
           primary: {
             main: "#C0C0C0"
-          }
-        }
+          },
+        },
+        typography: {
+            fontFamily: 'Lato, sans-serif',
+        },
     });
     const listProducts = products.map((product) => (
         <Grid item key ={product.id} xs = {12} sm = {6} md = {4} lg = {3}>

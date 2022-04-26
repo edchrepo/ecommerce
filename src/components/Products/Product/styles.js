@@ -13,6 +13,10 @@ const useStyles = {
     cardContent: {
       display: 'flex',
       justifyContent: 'space-between',
+      fontFamily: 'Lato, sans-serif',
+    },
+    description: {
+      fontFamily: 'Lato, sans-serif',
     },
   };
 

@@ -56,6 +56,9 @@ const useStyles =  {
     alignItems: 'center',
     justifyContent: 'center',
   },
+  button: {
+    fontFamily: 'Lato, sans-serif'
+  },
   inputRoot: {
     color: 'inherit',
   },

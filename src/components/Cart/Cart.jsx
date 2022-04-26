@@ -10,7 +10,7 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
   const classes = useClasses(styles);
   
   const EmptyCart = () => (
-    <Typography variant = "subtitle1"> You have no items in your shopping cart 
+    <Typography sx={{fontFamily: 'Lato, sans-serif'}} variant = "subtitle1"> You have no items in your shopping cart 
         <Link to ="/" className={classes.link}> start adding some!</Link>
     </Typography>
   )
@@ -25,14 +25,18 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
             ))}
         </Grid>
         <div className={classes.cardDetails}>
-            <Typography variant="h4">
+            <Typography sx={{fontFamily: 'Lato, sans-serif', fontWeight: 'bold',}} variant="h4">
                 Subtotal: { cart.subtotal.formatted_with_symbol }
             </Typography>
             <div>
-                <Button className={classes.emptyButton} size="large" type="button" variant="contained" color="secondary" onClick={handleEmptyCart}>
+                <Button sx={{fontFamily: 'Lato, sans-serif'}} 
+                        className={classes.emptyButton} size="large" type="button" variant="contained" 
+                        color="secondary" onClick={handleEmptyCart}>
                     Empty Cart
                 </Button>
-                <Button component={Link} to="/checkout" className={classes.checkoutButton} size="large" type="button" variant="contained" color="primary">
+                <Button sx={{fontFamily: 'Lato, sans-serif'}}
+                        component={Link} to="/checkout" className={classes.checkoutButton} 
+                        size="large" type="button" variant="contained" color="primary">
                     Checkout
                 </Button>
             </div>
@@ -48,7 +52,7 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
         <Container className={classes.container}>
             <div className={classes.toolbar}/>
             <br />
-            <Typography className={classes.title} variant="h3" gutterBottom>
+            <Typography sx={{fontFamily: 'Lato, sans-serif', fontWeight: 'bold',}} className={classes.title} variant="h3" gutterBottom>
                 Your Shopping Cart
             </Typography>
             { !cart.line_items.length ? <EmptyCart /> : <FilledCart />}
