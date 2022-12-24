@@ -24,6 +24,9 @@ const useStyles = {
   root: {
     flexGrow: 1,
   },
+  bottomblock: {
+    marginTop: '2.5%'
+  }
 };
 
 export default useStyles;

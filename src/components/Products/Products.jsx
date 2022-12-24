@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Grid, Button, ThemeProvider, createTheme} from '@mui/material';
+import {Grid, Button, ThemeProvider, createTheme, CircularProgress} from '@mui/material';
 import { commerce } from '../../lib/commerce';
 
 import Product from './Product/Product';
@@ -7,7 +7,9 @@ import styles from './styles';
 import useClasses from '../../hook';
 import block from '../../assets/block.png';
 
+
 const Products = ({ products, onAddToCart }) => {
+    const [isLoading, setIsLoading] = useState(false);
     const [category, setCategory] = useState("");
     const customTheme = createTheme({
         palette: {
@@ -29,7 +31,9 @@ const Products = ({ products, onAddToCart }) => {
             setCategory(products);
         } 
         else {
+            setIsLoading(true);
             const { data } = await commerce.products.list({category_slug: filter})
+            setIsLoading(false);
             setCategory(data);
         }
     }
@@ -51,13 +55,15 @@ const Products = ({ products, onAddToCart }) => {
                         </ThemeProvider>
                     </Grid>
                 </div>
+                <div className={classes.bottomblock}>
                     <Grid container justifyContent="center" spacing={4}>
-                        {category === "" ? listProducts : category.map((product) => (
+                        {isLoading ? <CircularProgress sx={{color: 'gray'}}/> : (category === "" ? listProducts : category.map((product) => (
                             <Grid item key ={product.id} xs = {12} sm = {6} md = {4} lg = {3}>
                                 <Product product = {product} onAddToCart = {onAddToCart} />
                             </Grid>
-                        ))}
+                        )))}
                     </Grid>
+                </div>
         </main>
         </>
     )
